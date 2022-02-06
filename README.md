@@ -1,5 +1,5 @@
 # Welcome to snake!
-just another weather vintage game :) 
+just another vintage game :) 
 
 Keep your face to the sun and you will never see the shadows.
 
