@@ -5,19 +5,24 @@
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     font-style: italic;
+    min-height: 100vh;
 }
 
 #container {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #3e8e41;
 }
 
 .pg_container {
-    min-height: 100vh;
-    width: 100vw;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,50 +32,64 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
     grid-template-rows: auto;
-    width: 100vw;
-    height: 90vh;
-}
-
-.square {
-    background-color: #3e8e41;
-    width: 10vw;
-    height: 9vh;
+    border: 2px solid black;
+    max-width: 90vw;
+    max-height: 90vh;
 }
 
 #ctrl {
-    height: 10vh;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
     width: 100%;
-    background: #aaa;
+    background: #333;
+    border-radius: 10px;
+}
+
+#ctrl p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: large;
+}
+
+#ctrl span {
+    font-weight: 700;
+}
+
+.square {
+    max-width: 9vw;
+    max-height: 9vh;
 }
 
 #ctrlBtn {
     font-size: large;
     cursor: pointer;
     outline: none;
-    color: #fff;
-    background-color: #04AA6D;
+    color: #295794;
+    background-color: #FFFFFF;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    margin: 1rem;
     border-radius: .5rem;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px #111;
 }
 
 #ctrlBtn:hover {
-    background-color: #3e8e41;
+    background-color: #ddd;
 }
 
 #ctrlBtn:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+    background-color: #ddd;
+    box-shadow: 0 5px #111;
     transform: translateY(4px);
 }
 
 .snake {
     background-size: cover;
-    background-image: url('./assets/snake.jpg') !important;
+    background-color: #111 !important;
     background-position: center;
 }
 
@@ -78,7 +97,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('./assets/food.png') !important;
+    background-color: #333 !important;
 }
 
 .footer {
@@ -101,4 +120,38 @@ body {
 .footer a span {
     height: 1em;
     padding-right: 0.5rem;
+}
+
+@media(max-aspect-ratio:9/16) {
+    #playground {
+        width: 90vw;
+        height: 90vw;
+    }
+    .square {
+        width: 9vw;
+        height: 9vw;
+    }
+}
+
+@media(aspect-ratio:9/16) {
+    #playground {
+        width: 70vh;
+        height: 70vh;
+    }
+    .square {
+        width: 7vh;
+        height: 7vh;
+    }
+}
+
+@media(min-aspect-ratio:9/16) {
+    #playground {
+        width: 70vh;
+        height: 70vh;
+    }
+    .square {
+        background-color: #3e8e41;
+        width: 7vh;
+        height: 7vh;
+    }
 }
